@@ -332,9 +332,9 @@ document.getElementById("proyectos").innerHTML = proyectos.map(p => {
   return `
   <article class="card" id="${p.id}">
     <p class="meta">${esc(p.meta)}</p>
-    <div><h2>${esc(p.nombre)}</h2><p class="bajada">${esc(p.bajada)}</p>${p.link?`<a class="link-sitio" href="${p.link.url}" target="_blank" rel="noopener">Visitar ${esc(p.link.texto)} <span aria-hidden="true">↗</span></a>`:""}</div>
+    <div class="card-top" ${p.sinPortada?'style="grid-template-columns:1fr"':''}>
       <div class="card-intro">
-        <div><h2>${esc(p.nombre)}</h2><p class="bajada">${esc(p.bajada)}</p></div>
+        <div><h2>${esc(p.nombre)}</h2><p class="bajada">${esc(p.bajada)}</p>${p.link?`<a class="link-sitio" href="${p.link.url}" target="_blank" rel="noopener">Visitar ${esc(p.link.texto)} <span aria-hidden="true">↗</span></a>`:""}</div>
         <div><h3 class="sub">Contexto</h3><p class="txt">${esc(p.contexto)}</p></div>
         <div><h3 class="sub">Problema</h3><p class="txt">${esc(p.problema)}</p></div>
       </div>
