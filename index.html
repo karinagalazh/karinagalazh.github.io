@@ -115,6 +115,7 @@ h1{margin:0;font-weight:800;color:var(--naranja);font-size:clamp(44px,7vw,80px);
 .bloques2 > .pantalla .img-slot{aspect-ratio:612/237}
 .pantalla .pt{margin:0;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
 .pantalla .pd{margin:0;font-size:12px;color:var(--cafe-400)}
+.link-sitio{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--naranja);text-decoration:underline;text-underline-offset:3px}
 
 /* Contacto */
 .contacto{background:var(--blanco);padding-block:48px}
@@ -286,6 +287,7 @@ const proyectos = [
 },
 {
   id:"ayreviews", meta:"Product designer · B2B SaaS", nombre:"Ayreviews", bajada:"Survey + Feedback",
+  link:{url:"https://ayreviews.com/", texto:"ayreviews.com"},
   contexto:"Ayhungry es una plataforma B2B SaaS de gestión para restaurantes que comenzó a expandir su solución de feedback a nuevos rubros. En este contexto, las encuestas comenzaron a tomar un rol más relevante dentro del producto, pero la experiencia existente no estaba preparada para soportarlas de manera clara ni estructurada.",
   problema:"Las encuestas no contaban con un espacio propio dentro de la plataforma, lo que dificultaba acceder a los resultados, entender la información recolectada e identificar oportunidades de mejora a partir del feedback — generando una experiencia fragmentada.",
   objetivo:["Centralizar las encuestas dentro del producto.","Mejorar la visualización y comprensión de resultados.","Facilitar la toma de decisiones basada en datos."],
@@ -330,7 +332,7 @@ document.getElementById("proyectos").innerHTML = proyectos.map(p => {
   return `
   <article class="card" id="${p.id}">
     <p class="meta">${esc(p.meta)}</p>
-    <div class="card-top" ${p.sinPortada?'style="grid-template-columns:1fr"':''}>
+    <div><h2>${esc(p.nombre)}</h2><p class="bajada">${esc(p.bajada)}</p>${p.link?`<a class="link-sitio" href="${p.link.url}" target="_blank" rel="noopener">Visitar ${esc(p.link.texto)} <span aria-hidden="true">↗</span></a>`:""}</div>
       <div class="card-intro">
         <div><h2>${esc(p.nombre)}</h2><p class="bajada">${esc(p.bajada)}</p></div>
         <div><h3 class="sub">Contexto</h3><p class="txt">${esc(p.contexto)}</p></div>
