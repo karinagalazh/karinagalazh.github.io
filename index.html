@@ -157,11 +157,11 @@ dialog.visor .cerrar-visor{width:44px;height:44px;border-radius:50%;border:0;bac
 
 /* Sobre mí */
 .sobre{padding-block:48px}
-.sobre-caja{background:var(--durazno-50);border-radius:32px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
-@media (min-width:900px){.sobre-caja{grid-template-columns:280px minmax(0,1fr);gap:56px}}
-.foto{width:min(100%,280px);aspect-ratio:481/767;max-height:420px;justify-self:center;border-radius:999px 999px 20px 20px;overflow:hidden;background:var(--rosa-50)}
-.foto img{width:100%;height:100%;object-fit:cover;object-position:top}
-@media (max-width:899px){.foto{width:200px;max-height:300px}}
+.sobre-caja{background:var(--durazno-50);border-radius:32px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr;gap:32px;align-items:stretch}
+@media (min-width:900px){.sobre-caja{grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:48px}}
+/* La foto ocupa todo el alto del bloque de texto, sin fondo */
+.foto{position:relative;min-height:360px}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
 .sobre-texto{display:flex;flex-direction:column;gap:20px;min-width:0}
 .sobre-texto p{margin:0;color:var(--cafe-400);max-width:64ch}
 .skills-lista{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
